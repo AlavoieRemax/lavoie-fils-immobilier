@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import React from "react";
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Lavoie & Fils Immobilier",
@@ -24,13 +25,13 @@ export default function RootLayout({
 </div>
           </div>
           <nav className="space-x-4">
-  <a href="/" className="hover:underline hover:text-remaxBlue">Accueil</a>
-  <a href="/equipe" className="hover:underline hover:text-remaxBlue">Notre Équipe</a>
-  <a href="/proprietes" className="hover:underline hover:text-remaxBlue">Propriétés</a>
-  <a href="/temoignages" className="hover:underline hover:text-remaxBlue">Témoignages</a>
-  <a href="/blog" className="hover:underline hover:text-remaxBlue">Blog</a>
-  <a href="/contact" className="hover:underline hover:text-remaxBlue">Contact</a>
-  <a href="/a-propos" className="hover:underline hover:text-remaxBlue">À propos</a>
+  <link href="/" className="hover:underline hover:text-remaxBlue">Accueil</link>
+  <link href="/equipe" className="hover:underline hover:text-remaxBlue">Notre Équipe</link>
+  <link href="/proprietes" className="hover:underline hover:text-remaxBlue">Propriétés</link>
+  <link href="/temoignages" className="hover:underline hover:text-remaxBlue">Témoignages</link>
+  <link href="/blog" className="hover:underline hover:text-remaxBlue">Blog</link>
+  <link href="/contact" className="hover:underline hover:text-remaxBlue">Contact</link>
+  <link href="/a-propos" className="hover:underline hover:text-remaxBlue">À propos</link>
 </nav>
         </header>
 
