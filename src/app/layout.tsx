@@ -1,46 +1,48 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import React from "react";
-import Link from 'next/link';
+import './globals.css'
+import Link from 'next/link'
+import Image from 'next/image'
 
-export const metadata: Metadata = {
-  title: "Lavoie & Fils Immobilier",
-  description: "Complice de votre projet immobilier à St-Donat, Lanaudière et Laurentides"
-};
+export const metadata = {
+  title: 'Lavoie & Fils Immobilier',
+  description: 'Complice de votre projet immobilier - Lanaudière & Laurentides',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="fr">
-      <body className="bg-white text-gray-900">
-        <header className="w-full p-6 bg-remaxRed text-white flex justify-between items-center shadow-md">
-          <div className="text-2xl font-bold flex items-center space-x-2">
-            {/* Ici on va ajouter ton logo très bientôt */}
-            <div className="flex items-center space-x-2">
-  <img src="/logo-bonjour.png" alt="Logo Bonjour" className="h-10" />
-  <span>Lavoie & Fils Immobilier</span>
-</div>
+      <body className="font-sans bg-white text-gray-900">
+
+        {/* Header */}
+        <header className="flex justify-between items-center p-4 bg-remaxBlue text-white">
+          <div className="flex items-center space-x-4">
+            <Image src="/logo-bonjour.png" alt="Logo" width={50} height={50} />
+            <span className="text-xl font-semibold">Lavoie & Fils Immobilier</span>
           </div>
-          <nav className="space-x-4">
-  <link href="/" className="hover:underline hover:text-remaxBlue">Accueil</link>
-  <link href="/equipe" className="hover:underline hover:text-remaxBlue">Notre Équipe</link>
-  <link href="/proprietes" className="hover:underline hover:text-remaxBlue">Propriétés</link>
-  <link href="/temoignages" className="hover:underline hover:text-remaxBlue">Témoignages</link>
-  <link href="/blog" className="hover:underline hover:text-remaxBlue">Blog</link>
-  <link href="/contact" className="hover:underline hover:text-remaxBlue">Contact</link>
-  <link href="/a-propos" className="hover:underline hover:text-remaxBlue">À propos</link>
-</nav>
+
+          <nav className="flex space-x-6">
+            <Link href="/">Accueil</Link>
+            <Link href="/equipe">Notre Équipe</Link>
+            <Link href="/properties">Propriétés</Link>
+            <Link href="/temoignage">Témoignages</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/a-propos">À propos</Link>
+          </nav>
         </header>
 
-        <main className="min-h-screen">{children}</main>
+        {/* Main content */}
+        {children}
 
-        <footer className="w-full p-4 bg-gray-100 text-center text-sm text-gray-600">
-          © {new Date().getFullYear()} Lavoie & Fils Immobilier
+        {/* Footer */}
+        <footer className="text-center p-4 text-sm text-gray-500">
+          © 2025 Lavoie & Fils Immobilier - Tous droits réservés
         </footer>
+
       </body>
     </html>
-  );
+  )
 }
